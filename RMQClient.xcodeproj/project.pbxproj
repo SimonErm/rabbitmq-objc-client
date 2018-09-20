@@ -203,6 +203,7 @@
 		AEF1E8FC1CBEA057000C7AB8 /* RMQHandshaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF1E8FA1CBEA057000C7AB8 /* RMQHandshaker.m */; };
 		AEFFE6381C8EE7B30039D652 /* RMQConnectionConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = AEFFE6361C8EE7B30039D652 /* RMQConnectionConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEFFE6391C8EE7B30039D652 /* RMQConnectionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFE6371C8EE7B30039D652 /* RMQConnectionConfig.m */; };
+		F8BBE92A2153D5B30055B410 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BBE9262153D5900055B410 /* CocoaAsyncSocket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -412,6 +413,8 @@
 		AEF1E8FA1CBEA057000C7AB8 /* RMQHandshaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMQHandshaker.m; sourceTree = "<group>"; };
 		AEFFE6361C8EE7B30039D652 /* RMQConnectionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMQConnectionConfig.h; sourceTree = "<group>"; };
 		AEFFE6371C8EE7B30039D652 /* RMQConnectionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMQConnectionConfig.m; sourceTree = "<group>"; };
+		F8BBE9252153D5900055B410 /* JKVValue.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JKVValue.framework; path = Carthage/Build/iOS/JKVValue.framework; sourceTree = "<group>"; };
+		F8BBE9262153D5900055B410 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +430,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8BBE92A2153D5B30055B410 /* CocoaAsyncSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,10 +737,13 @@
 		AEE7FE871C3BCA6000DF8C4F = {
 			isa = PBXGroup;
 			children = (
+				F8BBE9262153D5900055B410 /* CocoaAsyncSocket.framework */,
+				F8BBE9252153D5900055B410 /* JKVValue.framework */,
 				AEE7FE931C3BCA6000DF8C4F /* RMQClient */,
 				AEE7FE9F1C3BCA6000DF8C4F /* RMQClientTests */,
 				AEA45ED81C440FE400FE1F62 /* RMQClientIntegrationTests */,
 				AEE7FE921C3BCA6000DF8C4F /* Products */,
+				F8BBE9292153D5B30055B410 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -843,6 +850,13 @@
 				AE41C5621C51A2D500129207 /* RMQTransportContract.swift */,
 			);
 			name = Connection;
+			sourceTree = "<group>";
+		};
+		F8BBE9292153D5B30055B410 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1368,6 +1382,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 8;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RMQClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1386,6 +1404,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 8;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RMQClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
