@@ -140,7 +140,7 @@ RMQTCPSocketConfigurator noOpSocketConfigurator = ^(GCDAsyncSocket* _socket) {};
 
 - (void)write:(NSData *)data {
     [self.socket writeData:data
-               withTimeout:10
+               withTimeout:60
                        tag:writeTag];
 }
 
